@@ -9,28 +9,30 @@ import { Github, ExternalLink } from "lucide-react";
 
 export default async function Home() {
   return (
-    <div className="container max-w-3xl mx-auto py-10 px-4 space-y-10 relative">
-      <div className="absolute right-4 top-14 flex items-center gap-2">
-        <Button variant="outline" size="icon" asChild>
-          <Link
-            href="https://github.com/bramdenelzen/shadcn-typography"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Github className="h-[1.2rem] w-[1.2rem]" />
-          </Link>
-        </Button>
-        <ModeToggle />
-      </div>
-      <div className="space-y-24">
+    <div className="container max-w-3xl mx-auto pb-10 pt-28 px-4 space-y-10">
+      <div className="space-y-24 relative">
         <section>
-          <Typography variant="h1" className="mb-8">
+          <div className="absolute -top-18 md:top-4 left-0 md:right-0 md:left-auto z-50 flex gap-2">
+            <Button variant="outline" size="icon" asChild>
+              <Link
+                href="https://github.com/bramdenelzen/shadcn-typography"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Github className="h-[1.2rem] w-[1.2rem]" />
+              </Link>
+            </Button>
+            <ModeToggle />
+          </div>
+          <Typography variant="h1" className="mb-6">
             Typography
           </Typography>
-          <Typography variant="lead">
+
+          <Typography variant="lead" className="mb-6">
             This is a shadcn based typography component. Used to keep the visual
             hierarchy of the page consistent, and keep the semantics flexible.
           </Typography>
+          <div className="flex items-center gap-2"></div>
         </section>
 
         <InstallationSection />
