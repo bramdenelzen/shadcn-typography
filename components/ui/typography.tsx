@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils'
 const typographyVariants = cva('text-foreground', {
   variants: {
     variant: {
-      h1: 'font-heading text-6xl font-bold tracking-tighter md:text-7xl lg:text-8xl',
-      h2: 'font-heading text-3xl font-semibold tracking-tight first:mt-0',
+      h1: 'font-heading text-6xl font-bold tracking-tighter md:text-7xl ',
+      h2: 'font-heading text-4xl font-semibold tracking-tight first:mt-0',
       h3: 'font-heading text-2xl font-semibold tracking-tight',
       h4: 'font-heading text-xl font-semibold tracking-tight',
       p: 'leading-7 [&:not(:first-child)]:mt-6',
@@ -20,6 +20,7 @@ const typographyVariants = cva('text-foreground', {
       muted: 'text-sm text-muted-foreground',
       inlineCode:
         'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
+      meta: 'text-xs text-muted-foreground font-mono',
     },
   },
   defaultVariants: {
@@ -36,6 +37,7 @@ const variantElementMap: Record<NonNullable<VariantPropType>, React.ElementType>
   h4: 'h4',
   p: 'p',
   blockquote: 'blockquote',
+  meta: 'span',
   ul: 'ul',
   ol: 'ol',
   lead: 'p',
