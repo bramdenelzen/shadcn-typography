@@ -12,7 +12,7 @@ export function ExampleCodeSection() {
 
   return (
     <section>
-      <Typography variant="h2" className="text-primary">
+      <Typography variant="h2">
         Construction
       </Typography>
       <Typography variant="p" className="mb-8">

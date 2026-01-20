@@ -12,7 +12,7 @@ export default async function Home() {
       </div>
       <div className="space-y-24">
         <section>
-          <Typography variant="h1" className="text-primary mb-8">
+          <Typography variant="h1" className="mb-8">
             Typography
           </Typography>
           <Typography variant="lead">

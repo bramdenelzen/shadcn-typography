@@ -143,7 +143,7 @@ const sections: Section[] = [
 export function DefaultVariantsSection() {
   return (
     <section>
-      <Typography variant="h2" className="text-primary">
+      <Typography variant="h2">
         Default variants
       </Typography>
       <Typography variant="p" className="mb-12">
@@ -155,7 +155,7 @@ export function DefaultVariantsSection() {
         {sections.map((section) => (
           <li key={section.title} className="space-y-6">
             <div className="space-y-1">
-              <Typography variant="h3" className="text-primary">
+              <Typography variant="h3">
                 {section.title}
               </Typography>
               <Typography variant="muted">{section.description}</Typography>

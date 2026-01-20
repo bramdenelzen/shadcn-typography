@@ -7,7 +7,7 @@ export function InstallationSection() {
 
   return (
     <section>
-      <Typography variant="h2" className="mb-6 text-primary">
+      <Typography variant="h2" className="mb-6">
         Installation
       </Typography>
       <div className="relative">
