@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "typography",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york/ui/typography.tsx",
+      "content": "import * as React from 'react'\nimport { Slot } from '@radix-ui/react-slot'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '@/lib/utils'\n\nconst typographyVariants = cva('text-foreground', {\n  variants: {\n    variant: {\n      h1: 'font-heading text-6xl font-bold tracking-tighter md:text-7xl lg:text-8xl',\n      h2: 'font-heading text-3xl font-semibold tracking-tight first:mt-0',\n      h3: 'font-heading text-2xl font-semibold tracking-tight',\n      h4: 'font-heading text-xl font-semibold tracking-tight',\n      h5: 'font-heading text-lg font-semibold tracking-tight',\n      h6: 'font-heading text-base font-semibold tracking-tight',\n      p: 'leading-7 [&:not(:first-child)]:mt-6',\n      body: 'text-lg leading-relaxed text-muted-foreground',\n      blockquote: 'mt-6 border-l-2 pl-6 italic',\n      ul: 'my-6 ml-6 list-disc [&>li]:mt-2',\n      ol: 'my-6 ml-6 list-decimal [&>li]:mt-2',\n      lead: 'text-xl text-muted-foreground',\n      large: 'text-lg font-semibold',\n      small: 'text-sm font-medium leading-none',\n      muted: 'text-sm text-muted-foreground',\n      inlineCode:\n        'relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',\n      section: 'text-muted-foreground uppercase tracking-widest text-sm font-medium',\n      label: 'text-xs font-semibold text-muted-foreground uppercase tracking-wide',\n    },\n  },\n  defaultVariants: {\n    variant: 'p',\n  },\n})\n\ntype VariantPropType = VariantProps<typeof typographyVariants>['variant']\n\nconst variantElementMap: Record<NonNullable<VariantPropType>, React.ElementType> = {\n  h1: 'h1',\n  h2: 'h2',\n  h3: 'h3',\n  h4: 'h4',\n  h5: 'h5',\n  h6: 'h6',\n  p: 'p',\n  body: 'p',\n  blockquote: 'blockquote',\n  section: 'h2',\n  label: 'h5',\n  ul: 'ul',\n  ol: 'ol',\n  lead: 'p',\n  large: 'div',\n  small: 'small',\n  muted: 'p',\n  inlineCode: 'code',\n}\n\nexport interface TypographyProps\n  extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof typographyVariants> {\n  asChild?: boolean\n}\n\nconst Typography = React.forwardRef<HTMLElement, TypographyProps>(\n  ({ className, variant, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : (variant ? variantElementMap[variant] : 'p') || 'p'\n\n    return <Comp className={cn(typographyVariants({ variant, className }))} ref={ref} {...props} />\n  },\n)\nTypography.displayName = 'Typography'\n\nexport { Typography, typographyVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "cssVars": {
+    "theme": {
+      "font-heading": "Poppins, sans-serif"
+    }
+  },
+  "type": "registry:ui"
+}

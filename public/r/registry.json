@@ -75,6 +75,25 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "typography",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "files": [
+        {
+          "path": "registry/new-york/ui/typography.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "cssVars": {
+        "theme": {
+          "font-heading": "Poppins, sans-serif"
+        }
+      }
     }
   ]
 }
