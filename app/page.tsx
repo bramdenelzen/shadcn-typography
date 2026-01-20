@@ -2,6 +2,7 @@ import { Typography } from "@/components/ui/typography";
 import { Separator } from "@/components/ui/separator";
 import { CodeBlock } from "@/components/code-block";
 import { CopyButton } from "@/components/copy-button";
+import { ModeToggle } from "@/components/mode-toggle";
 import fs from "fs";
 import path from "path";
 
@@ -41,14 +42,6 @@ const sections: Section[] = [
         title: "h4",
         component: <Typography variant="h4">Visual Balance</Typography>,
       },
-      // {
-      //   title: "h5",
-      //   component: <Typography variant="h5">Character Spacing</Typography>,
-      // },
-      // {
-      //   title: "h6",
-      //   component: <Typography variant="h6">Line Height</Typography>,
-      // },
     ],
   },
   {
@@ -73,15 +66,6 @@ const sections: Section[] = [
           </Typography>
         ),
       },
-      // {
-      //   title: "body",
-      //   component: (
-      //     <Typography variant="body">
-      //       This is the body variant. It is designed for longer form content and
-      //       has a relaxed reading experience with slightly muted color.
-      //     </Typography>
-      //   ),
-      // },
       {
         title: "large",
         component: (
@@ -125,22 +109,11 @@ const sections: Section[] = [
         title: "inlineCode",
         component: (
           <Typography variant="p">
-            Press{" "}
-            <Typography variant="inlineCode" asChild>
-              <span className="text-sm">⌘K</span>
-            </Typography>{" "}
-            to open the command palette.
+            Press <Typography variant="inlineCode">⌘K</Typography> to open the
+            command palette.
           </Typography>
         ),
       },
-      // {
-      //   title: "section",
-      //   component: <Typography variant="section">Section Header</Typography>,
-      // },
-      // {
-      //   title: "label",
-      //   component: <Typography variant="label">Form Label</Typography>,
-      // },
     ],
   },
   {
@@ -179,18 +152,23 @@ export default async function Home() {
   );
 
   return (
-    <div className="container max-w-3xl mx-auto py-10 px-4 space-y-10">
+    <div className="container max-w-3xl mx-auto py-10 px-4 space-y-10 relative">
+      <div className="absolute right-4 top-4">
+        <ModeToggle />
+      </div>
       <div className="space-y-24">
-        <section className="space-y-6">
-          <Typography variant="h1">Typography</Typography>
+        <section>
+          <Typography variant="h1" className="text-primary mb-8">
+            Typography
+          </Typography>
           <Typography variant="lead">
-            A showcase of the typography component variants and their semantic
-            mappings.
+            This is a shadcn based typography component. Used to keep the visual
+            hierarchy of the page consistent, and keep the semantics flexible.
           </Typography>
         </section>
 
         <section>
-          <Typography variant="h2" className="mb-6">
+          <Typography variant="h2" className="mb-6 text-primary">
             Installation
           </Typography>
           <div className="relative">
@@ -205,7 +183,9 @@ export default async function Home() {
         </section>
 
         <section>
-          <Typography variant="h2">Construction</Typography>
+          <Typography variant="h2" className="text-primary">
+            Construction
+          </Typography>
           <Typography variant="p" className="mb-8">
             This component is built to provide semantic HTML structure while
             maintaining visual consistency.
@@ -222,14 +202,21 @@ export default async function Home() {
         </section>
 
         <section>
-          <Typography variant="h2" className="mb-6">
+          <Typography variant="h2" className="text-primary">
             Default variants
+          </Typography>
+          <Typography variant="p" className="mb-12">
+            The default variants are a starting point for building your own
+            typography. They are designed to be flexible and customizable, while
+            still maintaining a consistent visual hierarchy.
           </Typography>
           <ul className="space-y-24">
             {sections.map((section) => (
               <li key={section.title} className="space-y-6">
                 <div className="space-y-1">
-                  <Typography variant="h3">{section.title}</Typography>
+                  <Typography variant="h3" className="text-primary">
+                    {section.title}
+                  </Typography>
                   <Typography variant="muted">{section.description}</Typography>
                 </div>
                 <Separator />

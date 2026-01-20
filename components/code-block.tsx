@@ -14,7 +14,10 @@ export async function CodeBlock({ code, lang = "bash" }: CodeBlockProps) {
     .use(remarkParse)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
-        theme: "github-dark-dimmed",
+        theme: {
+          dark: "github-dark-default",
+          light: "github-light-default",
+        },
         keepBackground: false,
     })
     .use(rehypeStringify)
@@ -22,7 +25,7 @@ export async function CodeBlock({ code, lang = "bash" }: CodeBlockProps) {
 
   return (
     <div 
-        className="relative overflow-hidden rounded-lg bg-background p-4 font-mono text-sm text-foreground border"
+        className="relative overflow-hidden rounded-lg bg-background p-4 font-mono text-sm border"
         dangerouslySetInnerHTML={{ __html: String(file) }}
     />
   )
