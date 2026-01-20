@@ -3,6 +3,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { InstallationSection } from "@/components/sections/installation-section";
 import { ExampleCodeSection } from "@/components/sections/example-code-section";
 import { DefaultVariantsSection } from "@/components/sections/default-variants-section";
+import { PropsSection } from "@/components/sections/props-section";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Github, ExternalLink } from "lucide-react";
@@ -38,6 +39,8 @@ export default async function Home() {
         <InstallationSection />
 
         <ExampleCodeSection />
+
+        <PropsSection />
 
         <DefaultVariantsSection />
 
