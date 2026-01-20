@@ -25,7 +25,7 @@ export async function CodeBlock({ code, lang = "bash" }: CodeBlockProps) {
 
   return (
     <div 
-        className="relative overflow-hidden rounded-lg bg-background p-4 font-mono text-sm border"
+        className="relative overflow-hidden rounded-xs bg-background p-4 font-mono text-sm border"
         dangerouslySetInnerHTML={{ __html: String(file) }}
     />
   )

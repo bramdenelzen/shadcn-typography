@@ -165,7 +165,9 @@ export function DefaultVariantsSection() {
               {section.items.map((item) => (
                 <div key={item.title} className="grid gap-2">
                   <Typography variant="meta">{item.title}</Typography>
-                  {item.component}
+                  <div className="rounded-xs border p-6">
+                    {item.component}
+                  </div>
                 </div>
               ))}
             </div>
