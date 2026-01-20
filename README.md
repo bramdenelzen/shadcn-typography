@@ -1,23 +1,72 @@
-# registry-template
+# shadcn-typography
 
-You can use the `shadcn` CLI to run your own component registry. Running your own
-component registry allows you to distribute your custom components, hooks, pages, and
-other files to any React project.
+A flexible, semantic typography component for [shadcn/ui](https://ui.shadcn.com). Use it to maintain consistent visual hierarchy and semantic HTML structure across your application.
 
-> [!IMPORTANT]  
-> This template uses Tailwind v4. For Tailwind v3, see [registry-template-v3](https://github.com/shadcn-ui/registry-template-v3).
+## Installation
 
-## Getting Started
+```bash
+npx shadcn@latest add https://shadcn-typography.vercel.app/r/typography.json
+```
 
-This is a template for creating a custom registry using Next.js.
+## Usage
 
-- The template uses a `registry.json` file to define components and their files.
-- The `shadcn build` command is used to build the registry.
-- The registry items are served as static files under `public/r/[name].json`.
-- The template also includes a route handler for serving registry items.
-- Every registry item are compatible with the `shadcn` CLI.
-- We have also added v0 integration using the `Open in v0` api.
+```tsx
+import { Typography } from "@/components/ui/typography"
 
-## Documentation
+export default function Page() {
+  return (
+    <div className="space-y-4">
+      <Typography variant="h1">Taxonomy of Design</Typography>
+      <Typography variant="lead">
+        A modal dialog that interrupts the user with important content and expects a response.
+      </Typography>
+      <Typography variant="p">
+        Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.
+      </Typography>
+    </div>
+  )
+}
+```
 
-Visit the [shadcn documentation](https://ui.shadcn.com/docs/registry) to view the full documentation.
+## Variants
+
+The component uses a single `variant` prop to handle both styling and semantic HTML elements.
+
+| Variant | HTML Element | Description |
+| :--- | :--- | :--- |
+| `h1` | `h1` | Extra large heading for page titles. |
+| `h2` | `h2` | Section headings. |
+| `h3` | `h3` | Subsection headings. |
+| `h4` | `h4` | Small section headings. |
+| `p` | `p` | Standard paragraph text. |
+| `lead` | `p` | Lead paragraph text with larger size and muted color. |
+| `large` | `div` | Large text for emphasis. |
+| `small` | `small` | Small text for metadata. |
+| `muted` | `p` | Muted text for secondary information. |
+| `blockquote` | `blockquote` | Blockquotes for citations. |
+| `ul` | `ul` | Unordered lists. |
+| `ol` | `ol` | Ordered lists. |
+| `inlineCode` | `code` | Inline code snippets. |
+
+## Advanced Usage
+
+### Changing Semantics (asChild)
+
+The component supports the `asChild` prop (powered by [Radix UI Slot](https://www.radix-ui.com/primitives/docs/utilities/slot)), allowing you to change the underlying HTML element while maintaining the variant's styling. This is crucial for accessibility and semantic correctness.
+
+```tsx
+import { Typography } from "@/components/ui/typography"
+
+export default function Page() {
+  return (
+    // Looks like an H1, but renders as an H2 tag
+    <Typography variant="h1" asChild>
+      <h2>Semantic Heading Level 2</h2>
+    </Typography>
+  )
+}
+```
+
+## License
+
+MIT © Bram den Elzen
