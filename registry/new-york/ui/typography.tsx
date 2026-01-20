@@ -8,7 +8,7 @@ const typographyVariants = cva("text-foreground", {
   variants: {
     variant: {
       h1: "font-heading text-6xl font-bold tracking-tighter md:text-7xl lg:text-8xl",
-      h2: "font-heading text-3xl font-semibold tracking-tight first:mt-0",
+      h2: "font-heading text-3xl lg:text-4xl font-semibold tracking-tight first:mt-0",
       h3: "font-heading text-2xl font-semibold tracking-tight",
       h4: "font-heading text-xl font-semibold tracking-tight",
       p: "leading-7 [&:not(:first-child)]:mt-6",
