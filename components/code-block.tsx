@@ -27,7 +27,7 @@ export async function CodeBlock({ code, lang = "bash" }: CodeBlockProps) {
   return (
     <div className="relative rounded-xs p-4  bg-background font-mono text-sm border">
       <div className="absolute h-full  top-0 right-0">
-        <div className="sticky top-4 ml-auto p-2   flex justify-end w-fit">
+        <div className="sticky top-0 ml-auto p-2   flex justify-end w-fit">
           <CopyButton text={code} />
         </div>
       </div>
