@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "shadcn typography",
+  title: "Shadcn Typography",
   description: "A flexible, semantic typography component for shadcn/ui.",
 };
 
