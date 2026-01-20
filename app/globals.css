@@ -125,14 +125,14 @@
   }
 }
 
-code[data-theme*=" "],
-code[data-theme*=" "] span {
+code[data-theme*="light"],
+code[data-theme*="light"] span {
   color: var(--shiki-light);
   background-color: var(--shiki-light-bg);
 }
 
-.dark code[data-theme*=" "],
-.dark code[data-theme*=" "] span {
+.dark code[data-theme*="dark"],
+.dark code[data-theme*="dark"] span {
   color: var(--shiki-dark);
   background-color: var(--shiki-dark-bg);
 }

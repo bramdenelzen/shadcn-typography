@@ -95,8 +95,9 @@ const sections: Section[] = [
         title: "blockquote",
         component: (
           <Typography variant="blockquote">
-            "After all," he said, "everyone enjoys a good joke, so it's only
-            fair that they should pay for the privilege."
+            &quot;After all,&quot; he said, &quot;everyone enjoys a good joke,
+            so it&apos;s only fair that they should pay for the
+            privilege.&quot;
           </Typography>
         ),
       },
