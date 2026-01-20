@@ -50,6 +50,23 @@ The component uses a single `variant` prop to handle both styling and semantic H
 
 ## Advanced Usage
 
+### Changing Semantics (as)
+
+You can use the `as` prop to change the underlying HTML element while maintaining the variant's styling. This is useful when you want to use a specific HTML element but keep the visual consistency of a variant.
+
+```tsx
+import { Typography } from "@/components/ui/typography"
+
+export default function Page() {
+  return (
+    // Looks like an H1, but renders as an H2 tag
+    <Typography variant="h1" as="h2">
+      Semantic Heading Level 2
+    </Typography>
+  )
+}
+```
+
 ### Changing Semantics (asChild)
 
 The component supports the `asChild` prop (powered by [Radix UI Slot](https://www.radix-ui.com/primitives/docs/utilities/slot)), allowing you to change the underlying HTML element while maintaining the variant's styling. This is crucial for accessibility and semantic correctness.
